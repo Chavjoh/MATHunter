@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221120743) do
+ActiveRecord::Schema.define(version: 20140222143006) do
 
   create_table "chapters", force: true do |t|
     t.integer  "tutorial_id"
@@ -58,11 +58,13 @@ ActiveRecord::Schema.define(version: 20140221120743) do
   add_index "tutorials", ["user_id"], name: "index_tutorials_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "mail"
+    t.string   "email",            null: false
+    t.string   "crypted_password", null: false
+    t.string   "salt",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
