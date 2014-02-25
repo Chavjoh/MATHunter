@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if checkCredentials
+      redirect_to(:users, notice: 'Access denied !')
+    end
   end
 
   # GET /users/new
@@ -20,6 +23,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if checkCredentials
+      redirect_to(:users, notice: 'Access denied !')
+    end
   end
 
   # POST /users
@@ -58,10 +64,14 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
+    if checkCredentials
+      redirect_to(:users, notice: 'Access denied !')
+    else
+      @user.destroy
+      respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
     end
   end
 
@@ -74,5 +84,13 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+    
+    def checkCredentials
+      if current_user.id != @user.id
+        return true
+      else
+        return false
+      end
     end
 end
