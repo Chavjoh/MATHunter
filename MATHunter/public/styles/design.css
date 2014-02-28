@@ -2,7 +2,7 @@
 
 html, body {
 	margin: 0px;
-	padding: 90px 0px 130px 0px;
+	padding: 90px 0px 0px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
@@ -21,6 +21,11 @@ input[type=password] {
 	border-radius: 3px;
 	border: 1px solid #333438;
 	transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+input[type=submit] {
+	background-color: #333438;
+	color: #D6D6D6;
 }
 
 input:hover,
@@ -51,12 +56,19 @@ header {
 	top: 0px;
 }
 
+header .left_side {
+	float: left;
+	padding: 50px 0px 0px 0px;
+}
+
+header #user_detail {
+	display: block;
+}
+
 header #website_name {
 	color: #D6D6D6;
 	font-weight: bold;
 	font-size: 2.5em;
-	float: left;
-	padding: 50px 0px;
 }
 
 header nav {
@@ -76,7 +88,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-	color: #D6D6D6;
+	/* color: #D6D6D6; */
 	padding: 60px 0px;
 	display: block;
 	width: 126px;
@@ -93,6 +105,10 @@ header nav ul li a:hover {
 
 section {
 	clear: both;
+}
+
+section#content {
+	padding-bottom: 120px;
 }
 
 div.highlight {

@@ -11,11 +11,20 @@
 <body>
 	<header>
 		<div class="website_center">
-			<a id="website_name" href="#">MATHunter</a>
+			<div class="left_side">
+				<a id="website_name" href="<%= root_url %>">MATHunter</a>
+				<% if current_user %>
+					<span id="user_detail">
+						Connected as <%=current_user.email%>
+						<%= link_to "[Disconnect]", :logout %>
+					</span>
+				<% end %>
+			</div>
+			
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Tutorial</a></li>
+					<li><a href="<%= root_url %>">Home</a></li>
+					<li><%= link_to "Tutorials", tutorials_path %></li>
 					<% if current_user %>
 						<li><%= link_to "Account", edit_user_path(current_user.id) %></li>
 					<% else %>
@@ -28,15 +37,6 @@
 	
 	<section id="content">
 		<div class="website_center">
-			<div id="nav">
-				<% if current_user %>
-				  <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-				  <%= link_to "Logout", :logout, method: :post %>
-				<% else %>
-				  <%= link_to "Register", new_user_path %> |
-				  <%= link_to "Login", :login %>
-				<% end %>
-			</div>
 			<div>
 				<p id="notice"><%= flash[:notice] %></p>
 				<p id="alert"><%= flash[:alert] %></p>
