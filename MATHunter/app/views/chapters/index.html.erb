@@ -1,0 +1,12 @@
+<%= link_to 'New chapter', new_chapter_path %>
+
+<table>
+	<th>
+		<td>Title</td>
+	</th>
+	<% @chapters.each do |chapter| %>
+		<tr>
+			<td><%= link_to chapter.title, chapter %></td>
+		</tr>
+	<% end %>
+</table>

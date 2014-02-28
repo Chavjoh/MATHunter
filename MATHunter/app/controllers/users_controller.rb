@@ -25,6 +25,9 @@ class UsersController < ApplicationController
   def edit
     if checkCredentials
       redirect_to(:users, notice: 'Access denied !')
+    else
+      # get tutorials for the current user logged
+      @tutorials = Tutorial.where(:user_id => @user.id)
     end
   end
 

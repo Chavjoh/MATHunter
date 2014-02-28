@@ -2,5 +2,23 @@
 
 <%= render 'form' %>
 
+<!-- Listening of current user logged tutorials -->
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tutorials.each do |tutorial| %>
+		<tr>
+			<td><%= tutorial.title %></td>
+			<td><%= tutorial.description %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

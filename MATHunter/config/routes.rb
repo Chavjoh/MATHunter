@@ -1,8 +1,10 @@
 MATHunter::Application.routes.draw do
   root :to => 'users#index'
+  
+  resources :chapters
+  resources :tutorials
   resources :user_sessions
   resources :users
-  resources :tutorials
   
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

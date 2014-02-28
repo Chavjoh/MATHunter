@@ -1,0 +1,6 @@
+<h1><%= @chapter.title %></h1>
+<p><%= @chapter.content %></p>
+
+<%= link_to 'Back', chapters_path %>
+<%= link_to 'Edit', edit_chapter_path(@chapter) %>
+<%= link_to 'Delete', @chapter, method: 'delete' %>
