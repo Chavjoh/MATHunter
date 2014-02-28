@@ -2,7 +2,7 @@
 
 html, body {
 	margin: 0px;
-	padding: 90px 0px 0px 0px;
+	padding: 90px 0px 120px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
@@ -120,19 +120,18 @@ section {
 }
 
 section#content {
-	padding-bottom: 120px;
 }
 
 div.highlight {
 	text-align: center;
 	width: 280px;
-	padding: 0px 10px;
+	padding: 0px 16px;
 	min-height: 220px;
 	float: left;
 	margin: 10px;
 	color: #e5e5e5;
 	font-size: 32px;
-	font-family: 'Open Sans Light';
+	font-weight: 300;
 	
 	background: #43aad9; /* Old browsers */
 	background: -moz-linear-gradient(top,  #43aad9 0%, #27a0d7 99%); /* FF3.6+ */
