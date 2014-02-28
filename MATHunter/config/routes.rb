@@ -1,8 +1,10 @@
 MATHunter::Application.routes.draw do
   root :to => 'users#index'
   
-  resources :chapters
-  resources :tutorials
+  resources :tutorials do
+    resources :chapters
+  end
+  
   resources :user_sessions
   resources :users
   

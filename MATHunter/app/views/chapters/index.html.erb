@@ -1,12 +1,12 @@
-<%= link_to 'New chapter', new_chapter_path %>
-
+<h1><%= @tutorial.title %></h1>
+<%= link_to 'New chapter', new_tutorial_chapter_path %>
 <table>
 	<th>
 		<td>Title</td>
 	</th>
 	<% @chapters.each do |chapter| %>
 		<tr>
-			<td><%= link_to chapter.title, chapter %></td>
+			<td><%= link_to chapter.title, tutorial_chapter_path(@tutorial, chapter) %></td>
 		</tr>
 	<% end %>
 </table>
