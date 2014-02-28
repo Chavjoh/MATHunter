@@ -8,8 +8,28 @@ html, body {
 	font-size: 0.9em;
 }
 
-a {
+a,
+a:active,
+a:visited {
+	color: #27A0D7;
 	text-decoration: none;
+}
+
+input[type=text],
+input[type=password] {
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #333438;
+	transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+input:hover,
+input:active {
+	border: 1px solid #27A0D7;
+}
+
+*:focus {
+	outline: 0;
 }
 
 img {
