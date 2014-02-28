@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>MATHunter</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-<link rel="stylesheet" href="./styles/design.css">
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<link rel="stylesheet" href="<%= root_url %>styles/design.css">
 </head>
 <body>
 	<header>
@@ -16,7 +16,11 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Tutorial</a></li>
-					<li><a href="#">Account</a></li>
+					<% if current_user %>
+						<li><%= link_to "Account", edit_user_path(current_user.id) %></li>
+					<% else %>
+						<li><%= link_to "Login", :login %></li>
+					<% end %>
 				</ul>
 			</nav>
 		</div>
@@ -44,7 +48,7 @@
 	
 	<footer>
 		<div class="website_center">
-			<a href="http://www.github.com/Chavjoh/MATHunter"><img src="./images/github.png" alt="Github" /></a>
+			<a href="http://www.github.com/Chavjoh/MATHunter"><img src="<%= root_url %>images/github.png" alt="Github" /></a>
 			<span>Ruby on rails project</span>
 			Chavaillaz Johan, Jupille Dany, Rossier Matthieu
 		</div>
