@@ -1,0 +1,6 @@
+<%= form_for @tutorial do |f| %>
+	Title: <%= f.text_field :title %><br />
+	Difficulty: <%= f.select :difficulty, options_for_select([["Easy", "1"], ["Medium", "2"], ["Hard", "3"]]) %><br />
+	Description: <%= f.text_area :description %><br />
+	<%= f.submit %>
+<% end %>
