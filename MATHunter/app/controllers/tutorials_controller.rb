@@ -8,6 +8,12 @@ class TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
   end
   
+  def highlights
+    @tutorial = Tutorial.all
+    
+    render 'highlights'
+  end
+  
   def new
     @tutorial = Tutorial.new
   end

@@ -1,5 +1,5 @@
 MATHunter::Application.routes.draw do
-  root :to => 'users#index'
+  root :to => 'tutorials#highlights'
   
   resources :chapters
   resources :tutorials
