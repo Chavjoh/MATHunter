@@ -1,7 +1,7 @@
 class TutorialsController < ApplicationController
   
   def index
-    @tutorials = Tutorial.all
+    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 30)
   end
   
   def show

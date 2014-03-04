@@ -2,7 +2,7 @@ class ChaptersController < ApplicationController
   
   def index
     @tutorial = get_related_tutorial
-    @chapters = @tutorial.chapters.all
+    @chapters = @tutorial.chapters.paginate(:page => params[:page], :per_page => 10)
   end
   
   def show
