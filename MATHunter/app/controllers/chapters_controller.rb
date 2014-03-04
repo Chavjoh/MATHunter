@@ -23,6 +23,7 @@ class ChaptersController < ApplicationController
   def create
     @tutorial = get_related_tutorial
     @chapter = Chapter.new(get_params)
+    @chapter.tutorial_id = @tutorial.id
     
     if @chapter.save
       redirect_to tutorial_chapter_path(@tutorial, @chapter)
