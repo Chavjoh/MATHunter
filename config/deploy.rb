@@ -9,6 +9,17 @@ set :default_env, {
   'https_proxy' => 'https://proxy.he-arc.ch:8080'
 }
 
+namespace :sake do
+  desc "Invoke rake task"
+  task :invoke do
+    on "devweb@157.26.83.46" do
+      execute "cd #{deploy_to}/current && bundle exec rake #{ENV['task']}"
+    end
+    # 
+    # exec "sudo cd #{deploy_to}/current && bundle exec rake #{ENV['task']}"
+  end
+end
+
 # set :deploy_via, :copy_subdir
 # set :deploy_subdir, 'MATHunter'
 
