@@ -51,5 +51,7 @@ gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 
+gem 'capistrano-copy-subdir'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]

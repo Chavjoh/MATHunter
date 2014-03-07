@@ -4,6 +4,9 @@ lock '3.1.0'
 set :application, 'MATHunter'
 set :repo_url, 'https://github.com/Chavjoh/MATHunter.git'
 
+set :deploy_via, :copy_subdir
+set :deploy_subdir, 'MATHunter'
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
