@@ -4,6 +4,10 @@ require 'capistrano/setup'
 # Includes default deployment tasks
 require 'capistrano/deploy'
 
+# default_environment["http_proxy"] = 'http://proxy.he-arc.ch:8080'
+# default_environment["https_proxy"] = 'http://proxy.he-arc.ch:8080'
+
+
 # Includes tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:

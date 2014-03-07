@@ -3,6 +3,10 @@ lock '3.1.0'
 
 set :application, 'MATHunter'
 set :repo_url, 'https://github.com/Chavjoh/MATHunter.git'
+set :default_env, {
+  'http_proxy' => 'http://proxy.he-arc.ch:8080',
+  'https_proxy' => 'https://proxy.he-arc.ch:8080'
+}
 
 # set :deploy_via, :copy_subdir
 # set :deploy_subdir, 'MATHunter'
