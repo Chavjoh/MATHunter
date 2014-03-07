@@ -1,6 +1,0 @@
-<h1><%= @tutorial.title %></h1>
-<h2><%= @chapter.title %></h2>
-<p><%= @chapter.content %></p>
-<%= link_to 'Back', tutorial_chapters_path(@tutorial) %>
-<%= link_to 'Edit', edit_tutorial_chapter_path(@tutorial, @chapter) %>
-<%= link_to 'Delete', tutorial_chapter_path(@tutorial, @chapter), method: 'delete' %>
