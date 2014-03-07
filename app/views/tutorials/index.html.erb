@@ -1,0 +1,14 @@
+<%= link_to 'New tutorial', new_tutorial_path %>
+<table>
+	<th>
+		<td>Title</td>
+		<td>Difficulty</td>
+	</th>
+	<% @tutorials.each do |tutorial| %>
+		<tr>
+			<td><%= link_to tutorial.title, tutorial %></td>
+			<td><%= tutorial.difficulty %></td>
+		</tr>
+	<% end %>
+</table>
+<%= will_paginate @tutorials %>

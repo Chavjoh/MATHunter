@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>MATHunter</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<link rel="stylesheet" href="<%= root_url %>styles/design.css">
+</head>
+<body>
+	<header>
+		<div class="website_center">
+			<div class="left_side">
+				<a id="website_name" href="<%= root_url %>">MATHunter</a>
+				<% if current_user %>
+					<span id="user_detail">
+						Connected as <%=current_user.email%>
+						<%= link_to "[Disconnect]", :logout %>
+					</span>
+				<% end %>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="<%= root_url %>">Home</a></li>
+					<li><%= link_to "Tutorials", tutorials_path %></li>
+					<% if current_user %>
+						<li><%= link_to "Account", edit_user_path(current_user.id) %></li>
+					<% else %>
+						<li><%= link_to "Login", :login %></li>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<section id="content">
+		<div class="website_center">
+			<div>
+				<p id="notice"><%= flash[:notice] %></p>
+				<p id="alert"><%= flash[:alert] %></p>
+			</div>
+				
+			<%= yield %>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="website_center">
+			<a href="http://www.github.com/Chavjoh/MATHunter"><img src="<%= root_url %>images/github.png" alt="Github" /></a>
+			<span>Ruby on rails project</span>
+			Chavaillaz Johan, Jupille Dany, Rossier Matthieu
+		</div>
+	</footer>
+</body>
+</html>
