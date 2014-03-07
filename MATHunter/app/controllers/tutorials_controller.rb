@@ -1,7 +1,7 @@
 class TutorialsController < ApplicationController
   
   def index
-    @tutorials = Tutorial.all
+    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 30)
   end
   
   def show
@@ -24,9 +24,11 @@ class TutorialsController < ApplicationController
   
   def create
     @tutorial = Tutorial.new(get_params)
+    @tutorial.score = 0
+    @tutorial.user_id = current_user.id
     
     if @tutorial.save
-      redirect_to @tutorial
+      redirect_to tutorial_path(@tutorial)
     else
       render 'new'
     end
@@ -36,7 +38,7 @@ class TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
     
     if @tutorial.update(get_params)
-      redirect_to @tutorial
+      redirect_to tutorial_path(@tutorial)
     else
       render 'edit'
     end
@@ -52,6 +54,6 @@ class TutorialsController < ApplicationController
   private
   
   def get_params
-    params[:tutorial].permit(:title, :difficulty, :description)
+    params[:tutorial].permit(:descrption, :difficulty, :image, :title)
   end
 end

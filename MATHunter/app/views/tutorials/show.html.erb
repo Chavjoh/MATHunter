@@ -4,4 +4,5 @@
 
 <%= link_to 'Back', tutorials_path %>
 <%= link_to 'Edit', edit_tutorial_path(@tutorial) %>
-<%= link_to 'Delete', @tutorial, method: 'delete' %>
+<%= link_to 'Delete', tutorial_path(@tutorial), method: 'delete' %><br />
+<%= link_to 'View all chapters', tutorial_chapters_path(@tutorial) %>

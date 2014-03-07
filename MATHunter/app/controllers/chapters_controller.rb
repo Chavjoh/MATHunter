@@ -2,7 +2,7 @@ class ChaptersController < ApplicationController
   
   def index
     @tutorial = get_related_tutorial
-    @chapters = @tutorial.chapters.all
+    @chapters = @tutorial.chapters.paginate(:page => params[:page], :per_page => 10)
   end
   
   def show
@@ -23,6 +23,7 @@ class ChaptersController < ApplicationController
   def create
     @tutorial = get_related_tutorial
     @chapter = Chapter.new(get_params)
+    @chapter.tutorial_id = @tutorial.id
     
     if @chapter.save
       redirect_to tutorial_chapter_path(@tutorial, @chapter)
