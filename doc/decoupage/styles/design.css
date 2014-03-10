@@ -6,6 +6,7 @@ html, body {
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
+	text-align: justify;
 }
 
 a {
@@ -98,6 +99,28 @@ div.highlight {
 
 div.highlight .image {
 	padding: 15px;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+table {
+	clear: both;
+}
+
+table td.chapter {
+	font-weight: bold;
+	font-size: 3em;
+	color: white;
+	padding: 10px 30px;
+	border: 1px solid #43aad9;
+	background-color: #43aad9;
+}
+
+.tutorial_image {
+	float: left;
+	margin-right: 20px;
 }
 
 footer {
