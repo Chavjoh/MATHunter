@@ -11,14 +11,14 @@
 		</ul>
 	</div>
 	<div class="content">
-		<div class="edit">
+		<div class="top-right">
+			<%= link_to image_tag('/images/icons/back.png') + 'Back to tutorial', tutorial_chapters_path(@tutorial), { :class => "actionlink" } %>
+			<%= link_to image_tag('/images/icons/edit.png') + 'Edit', edit_tutorial_chapter_path(@tutorial, @chapter), { :class => "actionlink" } %>
+			<%= link_to image_tag('/images/icons/delete.png') + 'Delete', tutorial_chapter_path(@tutorial, @chapter), { :method => 'delete', :class => "actionlink" } %>
+		</div>
 		<h2><%= @chapter.title %></h2>
 		<p>
 			<%= @chapter.content %>
 		</p>
 	</div>
 </div>
-
-<%= link_to 'Back', tutorial_chapters_path(@tutorial) %>
-<%= link_to 'Edit', edit_tutorial_chapter_path(@tutorial, @chapter) %>
-<%= link_to 'Delete', tutorial_chapter_path(@tutorial, @chapter), method: 'delete' %>
