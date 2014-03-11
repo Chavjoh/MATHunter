@@ -1,11 +1,13 @@
 class TutorialsController < ApplicationController
   
   def index
-    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 30)
+    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 12)
   end
   
   def show
     @tutorial = Tutorial.find(params[:id])
+    
+    redirect_to tutorial_chapters_path(@tutorial)
   end
   
   def highlights
@@ -54,6 +56,6 @@ class TutorialsController < ApplicationController
   private
   
   def get_params
-    params[:tutorial].permit(:descrption, :difficulty, :image, :title)
+    params[:tutorial].permit(:description, :difficulty, :image, :title)
   end
 end

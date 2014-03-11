@@ -1,13 +1,24 @@
+<div class="top-right">
+	<%= link_to image_tag('/images/icons/back.png') + 'Back to tutorial list', tutorials_path, { :class => "actionlink" } %>
+	<%= link_to image_tag('/images/icons/edit.png') + 'Edit', edit_tutorial_path(@tutorial), { :class => "actionlink" } %>
+	<%= link_to image_tag('/images/icons/delete.png') + 'Delete', tutorial_path(@tutorial), { :method => 'delete', :class => "actionlink" } %>
+	<%= link_to 'New chapter', new_tutorial_chapter_path, { :class => "actionlink" } %>
+</div>
+
 <h1><%= @tutorial.title %></h1>
-<%= link_to 'New chapter', new_tutorial_chapter_path %>
-<table>
-	<th>
-		<td>Title</td>
-	</th>
-	<% @chapters.each do |chapter| %>
-		<tr>
-			<td><%= link_to chapter.title, tutorial_chapter_path(@tutorial, chapter) %></td>
-		</tr>
+<img class="tutorial_image" src="<%= root_url + @tutorial.image %>" alt="<%= @tutorial.title %>" /> 
+<p>
+	Difficulty : <%= @tutorial.difficulty%>
+</p>
+<p>
+	<%= @tutorial.description %>
+</p>
+<table cellspacing="10">
+	<% @chapters.each_with_index do |chapter, index| %>
+	<tr>
+		<td class="chapter"><%= index + 1 %></td>
+		<td><h2><%= link_to chapter.title, tutorial_chapter_path(@tutorial, chapter) %></h2></td>
+	</tr>
 	<% end %>
 </table>
 <%= will_paginate @chapters %>
