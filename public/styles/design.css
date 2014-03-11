@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 html, body {
+	text-align: justify;
 	margin: 0px;
-	padding: 90px 0px 120px 0px;
+	padding: 90px 0px 60px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
