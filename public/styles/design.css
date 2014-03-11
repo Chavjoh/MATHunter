@@ -171,6 +171,10 @@ div.highlight .image {
 	padding: 15px;
 }
 
+div.highlight a {
+	color: white;
+}
+
 table {
 	clear: both;
 }

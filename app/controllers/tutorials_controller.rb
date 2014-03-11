@@ -9,7 +9,7 @@ class TutorialsController < ApplicationController
   end
   
   def highlights
-    @tutorial = Tutorial.all
+    @tutorials = Tutorial.all
     
     render 'highlights'
   end
