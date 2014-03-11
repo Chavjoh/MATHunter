@@ -1,6 +1,21 @@
 <h1><%= @tutorial.title %></h1>
-<p><%= @tutorial.difficulty%></p>
-<p><%= @tutorial.description %></p>
+<img class="tutorial_image" src="<%= root_url + @tutorial.image %>" alt="<%= @tutorial.title %>" /> 
+<p>
+	Difficulty : <%= @tutorial.difficulty%>
+</p>
+<p>
+	<%= @tutorial.description %>
+</p>
+<table cellspacing="10">
+	<tr>
+		<td class="chapter">1</td>
+		<td><h2>Chapitre 1</h2></td>
+	</tr>
+	<tr>
+		<td class="chapter">2</td>
+		<td><h2>Chapitre 2</h2></td>
+	</tr>
+</table>
 
 <%= link_to 'Back', tutorials_path %>
 <%= link_to 'Edit', edit_tutorial_path(@tutorial) %>

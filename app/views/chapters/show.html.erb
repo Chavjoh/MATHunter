@@ -1,6 +1,24 @@
 <h1><%= @tutorial.title %></h1>
-<h2><%= @chapter.title %></h2>
-<p><%= @chapter.content %></p>
+
+<div id="tutorial">
+	<div class="tab">
+		<ul>
+			<% @chapters.each do |chapter| %>
+				<li <% if chapter.id == @chapter.id %>class="selected"<% end %>>
+					<%= link_to chapter.title, tutorial_chapter_path(@tutorial, chapter) %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="edit">
+		<h2><%= @chapter.title %></h2>
+		<p>
+			<%= @chapter.content %>
+		</p>
+	</div>
+</div>
+
 <%= link_to 'Back', tutorial_chapters_path(@tutorial) %>
 <%= link_to 'Edit', edit_tutorial_chapter_path(@tutorial, @chapter) %>
 <%= link_to 'Delete', tutorial_chapter_path(@tutorial, @chapter), method: 'delete' %>
