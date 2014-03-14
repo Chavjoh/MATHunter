@@ -209,6 +209,10 @@ table td.chapter {
 	border: 1px solid #43aad9;
 }
 
+#tutorial .content * {
+	overflow: hidden;
+}
+
 .tab {
 	float: left;
 	width: 126px;
@@ -227,7 +231,8 @@ table td.chapter {
 	border-left: 6px solid #666;
 	background-color: #ddd;
 	margin: 8px 0;
-}
+	overflow: hidden;
+} 
 
 .tab ul li a,
 .tab ul li a:visited {
@@ -262,6 +267,7 @@ table.comment_form .title {
 
 table.comment_form textarea {
 	width: 845px;
+	height: 100px;
 }
 
 footer {
