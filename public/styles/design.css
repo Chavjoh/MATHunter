@@ -3,7 +3,7 @@
 html, body {
 	text-align: justify;
 	margin: 0px;
-	padding: 90px 0px 60px 0px;
+	padding: 90px 0px 0px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
@@ -21,7 +21,8 @@ h1 {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+textarea {
 	padding: 5px;
 	border-radius: 3px;
 	border: 1px solid #333438;
@@ -46,7 +47,9 @@ input[type=submit]:active {
 }
 
 input:hover,
-input:active {
+input:active,
+textarea:hover,
+textarea:active {
 	border: 1px solid #27A0D7;
 }
 
@@ -208,7 +211,6 @@ table td.chapter {
 
 .tab {
 	float: left;
-	margin: 30px 0 0 0;
 	width: 126px;
 }
 
@@ -222,7 +224,7 @@ table td.chapter {
 	border-top: 1px solid #666;
 	border-right: 1px solid #43aad9;
 	border-bottom: 1px solid #666;
-	border-left: 8px solid #666;
+	border-left: 6px solid #666;
 	background-color: #ddd;
 	margin: 8px 0;
 }
@@ -236,7 +238,7 @@ table td.chapter {
 }
 
 .tab ul li:hover {
-	border-left: 8px solid #333;
+	border-left: 6px solid #333;
 }
 
 .tab ul li a:hover {
@@ -246,18 +248,30 @@ table td.chapter {
 .tab ul li.selected {
 	border-right: none;
 	background-color: #fff;
-	border-left: 8px solid #43aad9;
+	border-left: 6px solid #43aad9;
 	border-color: #43aad9;
+}
+
+table.comment_form {
+	width: 100%;
+}
+
+table.comment_form .title {
+	width: 126px;
+}
+
+table.comment_form textarea {
+	width: 845px;
 }
 
 footer {
 	background-color: #333438;
 	color: #D6D6D6;
-	margin-top: 20px;
+	margin-top: 40px;
 	padding: 30px 0px;
-	position: fixed;
 	bottom: 0px;
 	width: 100%;
+	clear: both;
 }
 
 footer span {

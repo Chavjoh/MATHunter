@@ -5,6 +5,10 @@ MATHunter::Application.routes.draw do
     resources :chapters
   end
   
+  resources :chapters do 
+    resources :comments
+  end
+  
   resources :user_sessions
   resources :users
   
