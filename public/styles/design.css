@@ -3,7 +3,7 @@
 html, body {
 	text-align: justify;
 	margin: 0px;
-	padding: 90px 0px 60px 0px;
+	padding: 90px 0px 0px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
@@ -208,7 +208,6 @@ table td.chapter {
 
 .tab {
 	float: left;
-	margin: 30px 0 0 0;
 	width: 126px;
 }
 
@@ -222,7 +221,7 @@ table td.chapter {
 	border-top: 1px solid #666;
 	border-right: 1px solid #43aad9;
 	border-bottom: 1px solid #666;
-	border-left: 8px solid #666;
+	border-left: 6px solid #666;
 	background-color: #ddd;
 	margin: 8px 0;
 }
@@ -236,7 +235,7 @@ table td.chapter {
 }
 
 .tab ul li:hover {
-	border-left: 8px solid #333;
+	border-left: 6px solid #333;
 }
 
 .tab ul li a:hover {
@@ -246,7 +245,7 @@ table td.chapter {
 .tab ul li.selected {
 	border-right: none;
 	background-color: #fff;
-	border-left: 8px solid #43aad9;
+	border-left: 6px solid #43aad9;
 	border-color: #43aad9;
 }
 
@@ -255,7 +254,6 @@ footer {
 	color: #D6D6D6;
 	margin-top: 20px;
 	padding: 30px 0px;
-	position: fixed;
 	bottom: 0px;
 	width: 100%;
 }
