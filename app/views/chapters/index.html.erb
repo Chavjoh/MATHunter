@@ -1,8 +1,8 @@
 <div class="top-right">
 	<%= link_to image_tag('/images/icons/back.png') + 'Back to tutorial list', tutorials_path, { :class => "actionlink" } %>
+	<%= link_to image_tag('/images/icons/add.png') + 'New chapter', new_tutorial_chapter_path, { :class => "actionlink" } %>
 	<%= link_to image_tag('/images/icons/edit.png') + 'Edit', edit_tutorial_path(@tutorial), { :class => "actionlink" } %>
 	<%= link_to image_tag('/images/icons/delete.png') + 'Delete', tutorial_path(@tutorial), { :method => 'delete', :class => "actionlink" } %>
-	<%= link_to 'New chapter', new_tutorial_chapter_path, { :class => "actionlink" } %>
 </div>
 
 <h1><%= @tutorial.title %></h1>
