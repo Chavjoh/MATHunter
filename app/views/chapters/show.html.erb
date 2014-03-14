@@ -21,7 +21,7 @@
 		</div>
 		<h2><%= @chapter.title %></h2>
 		<p>
-			<%= @chapter.content %>
+			<%= @chapter.content.html_safe %>
 		</p>
 	</div>
 </div>
