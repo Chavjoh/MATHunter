@@ -21,7 +21,8 @@ h1 {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+textarea {
 	padding: 5px;
 	border-radius: 3px;
 	border: 1px solid #333438;
@@ -46,7 +47,9 @@ input[type=submit]:active {
 }
 
 input:hover,
-input:active {
+input:active,
+textarea:hover,
+textarea:active {
 	border: 1px solid #27A0D7;
 }
 
@@ -252,7 +255,7 @@ table td.chapter {
 footer {
 	background-color: #333438;
 	color: #D6D6D6;
-	margin-top: 20px;
+	margin-top: 40px;
 	padding: 30px 0px;
 	bottom: 0px;
 	width: 100%;
