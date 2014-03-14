@@ -252,6 +252,18 @@ table td.chapter {
 	border-color: #43aad9;
 }
 
+table.comment_form {
+	width: 100%;
+}
+
+table.comment_form .title {
+	width: 126px;
+}
+
+table.comment_form textarea {
+	width: 845px;
+}
+
 footer {
 	background-color: #333438;
 	color: #D6D6D6;

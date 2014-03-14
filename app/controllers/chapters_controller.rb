@@ -9,6 +9,9 @@ class ChaptersController < ApplicationController
     @tutorial = get_related_tutorial
     @chapter = Chapter.find(params[:id])
     @chapters = @tutorial.chapters
+    
+    @comments = @chapter.comments.paginate(page: params[:page])
+    @comment = Comment.new 
   end
   
   def new
