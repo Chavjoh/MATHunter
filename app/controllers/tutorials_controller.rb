@@ -1,7 +1,11 @@
 class TutorialsController < ApplicationController
   
   def index
-    @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 12)
+    if params[:search]
+      @tutorials = Tutorial.search(params[:search]).order("created_at DESC")
+    else
+      @tutorials = Tutorial.paginate(:page => params[:page], :per_page => 12)
+    end
   end
   
   def show
@@ -14,6 +18,10 @@ class TutorialsController < ApplicationController
     @tutorials = Tutorial.all
     
     render 'highlights'
+  end
+  
+  def search
+    @tutorials = Tutorial.search(params[:search])
   end
   
   def new
