@@ -57,5 +57,7 @@ gem 'capistrano-copy-subdir'
 
 gem 'ckeditor_rails'
 
+gem 'mathjax-rails'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
