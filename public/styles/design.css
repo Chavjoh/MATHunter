@@ -196,6 +196,13 @@ table td.chapter {
 	margin-right: 20px;
 }
 
+#search-form {
+	background-color: #D6D6D6;
+	border-radius: 5px;
+	padding: 12px;
+	margin-bottom: 10px;
+}
+
 #tutorial {
 	padding: 20px 10px;
 	overflow: auto;
