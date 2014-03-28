@@ -202,6 +202,24 @@ table td.chapter {
 	margin-bottom: 10px;
 }
 
+#tutorial_form {
+	width: 100%;
+}
+
+#tutorial_form .information {
+	width: 250px;
+	padding-right: 20px;
+}
+
+#tutorial_form input {
+	width: 230px;
+}
+
+#tutorial_form .description textarea {
+	width: 720px;
+	height: 130px;
+}
+
 #tutorial {
 	padding: 20px 10px;
 	overflow: auto;
@@ -284,6 +302,18 @@ footer {
 	width: 100%;
 	position: fixed;
 	clear: both;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
 }
 
 footer span {
