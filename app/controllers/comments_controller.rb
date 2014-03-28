@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :require_login
+  
   def create
     # Create comment in chapter
     @chapter = Chapter.find(params[:chapter_id])

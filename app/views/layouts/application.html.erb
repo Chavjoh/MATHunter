@@ -3,10 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>MATHunter</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
-	
+	<link type="text/css" rel="stylesheet" href="<%= root_url %>plugins/walkthrough/css/jquery.pagewalkthrough.css"/>
+	<link type="text/css" rel="stylesheet" href="<%= root_url %>styles/design.css"/>
+	<script type="text/javascript" src="<%= root_url %>plugins/walkthrough/jquery.pagewalkthrough-1.1.0.js"></script>
+	<script type="text/javascript" src="<%= root_url %>javascripts/application.walkthrough.js"></script>	
 	<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     	tex2jax: {
@@ -15,8 +18,6 @@
     });
 	</script>
 	<%= mathjax_tag :config=>'Accessible-full.js' %>
-	
-	<link rel="stylesheet" href="<%= root_url %>styles/design.css">
 </head>
 <body data-no-turbolink>
 	<header>
@@ -57,11 +58,45 @@
 	</section>
 	
 	<footer>
-		<div class="website_center">
+		<div class="website_center" id="JESUISUNTEST">
 			<a href="http://www.github.com/Chavjoh/MATHunter"><img src="<%= root_url %>images/github.png" alt="Github" /></a>
 			<span>Ruby on rails project</span>
 			Chavaillaz Johan, Jupille Dany, Rossier Matthieu
 		</div>
 	</footer>
+	
+	<div id="walkthrough">
+		<div id="type-modal" style="display:none;">
+			<p class="tooltipTitle">It works!</p>
+	        <p>F* finally!</p>
+	        <br>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+		</div>
+		<div id="type-tooltip" style="display:none;">
+			<p class="tooltipTitle">It still f* works!</p>
+	        <p>I'm so proud of myself.</p>
+	        <br>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+		</div>
+		<div id="type-tooltip-top" style="display:none;">
+			<p class="tooltipTitle">Arrow!</p>
+	        <p>So majestic...</p>
+	        <br>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+		</div>
+		<div id="done-walkthrough" style="display:none;">
+			<p class="tooltipTitle">Woooo !</p>
+	        <p>Worked all along!</p>
+	        <br>
+	        <p>Walkthrough generated with <a target="_blank" href="http://jquerypagewalkthrough.github.io/">Jquery Page Walkthrough</a></p>
+	        <br>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
+	        <a href="javascript:;" class="restart-step" style="float:center;">Restart Walkthrough</a>
+	        <a href="javascript:;" class="close-step" style="float:right;">Close Walkthrough</a>
+		</div>
+	</div>
+	
 </body>
 </html>
