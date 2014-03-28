@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       # end
     # end
     if @user.save
-        redirect_to(:users, notice: 'User was successfully created')
+        redirect_to(:root, notice: 'User was successfully created')
     end
   end
 
