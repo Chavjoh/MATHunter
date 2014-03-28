@@ -1,4 +1,5 @@
 class TutorialsController < ApplicationController
+  before_filter :require_login, :except => [:index, :show, :highlights, :search]
   
   def index
     if params[:search]
@@ -29,7 +30,11 @@ class TutorialsController < ApplicationController
   end
   
   def edit
-    @tutorial = Tutorial.find(params[:id])
+      @tutorial = Tutorial.find(params[:id])
+      
+      if @tutorial.user_id != current_user.id
+        redirect_to(:tutorials, notice: 'Access Denied !')
+      end
   end
   
   def create
@@ -56,9 +61,13 @@ class TutorialsController < ApplicationController
   
   def destroy
     @tutorial = Tutorial.find(params[:id])
-    @tutorial.destroy
     
-    redirect_to tutorials_path
+    if @tutorial.user_id != current_user.id
+      redirect_to(:tutorials, notice: 'Access Denied !')
+    else
+      @tutorial.destroy
+      redirect_to tutorials_path
+    end
   end
   
   private
@@ -66,4 +75,5 @@ class TutorialsController < ApplicationController
   def get_params
     params[:tutorial].permit(:description, :difficulty, :image, :title)
   end
+  
 end
