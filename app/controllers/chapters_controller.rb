@@ -17,7 +17,11 @@ class ChaptersController < ApplicationController
   
   def new
     @tutorial = get_related_tutorial
-    @chapter = Chapter.new
+    if @tutorial.user_id != current_user.id
+      redirect_to(:tutorials, alert: 'Access Denied !')
+    else
+      @chapter = Chapter.new
+    end
   end
   
   def edit
@@ -25,7 +29,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     
     if @tutorial.user_id != current_user.id
-      redirect_to(:tutorials, notice: 'Access Denied !')
+      redirect_to(:tutorials, alert: 'Access Denied !')
     end
   end
   
@@ -57,7 +61,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     
     if @tutorial.user_id != current_user.id
-      redirect_to(:tutorials, notice: 'Access Denied !')
+      redirect_to(:tutorials, :alert => 'Acess denied !')
     else
       @chapter.destroy
       redirect_to tutorial_chapters_path(@tutorial)

@@ -33,7 +33,7 @@ class TutorialsController < ApplicationController
       @tutorial = Tutorial.find(params[:id])
       
       if @tutorial.user_id != current_user.id
-        redirect_to(:tutorials, notice: 'Access Denied !')
+        redirect_to(:tutorials, alert: 'Access Denied !')
       end
   end
   
@@ -63,7 +63,7 @@ class TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
     
     if @tutorial.user_id != current_user.id
-      redirect_to(:tutorials, notice: 'Access Denied !')
+      redirect_to(:tutorials, alert: 'Access Denied !')
     else
       @tutorial.destroy
       redirect_to tutorials_path
