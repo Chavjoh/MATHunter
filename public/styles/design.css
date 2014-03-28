@@ -3,7 +3,7 @@
 html, body {
 	text-align: justify;
 	margin: 0px;
-	padding: 90px 0px 0px 0px;
+	padding: 0px 0px 90px 0px;
 	background-color: #E5E5E5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
@@ -90,8 +90,7 @@ header {
 	background-color: #333438;
 	color: #D6D6D6;
 	margin-bottom: 20px;
-	position: fixed;
-	top: 0px;
+	float: left;
 }
 
 header .left_side {
@@ -280,10 +279,10 @@ table.comment_form textarea {
 footer {
 	background-color: #333438;
 	color: #D6D6D6;
-	margin-top: 40px;
-	padding: 30px 0px;
+	padding: 20px 0px;
 	bottom: 0px;
 	width: 100%;
+	position: fixed;
 	clear: both;
 }
 
