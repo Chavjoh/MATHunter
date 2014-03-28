@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     if checkCredentials
-      redirect_to(:users, notice: 'Access denied !')
+      redirect_to(:users, alert: 'Access denied !')
     else
       # get tutorials for the current user logged
       @tutorials = Tutorial.where(:user_id => @user.id)
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       # end
     # end
     if @user.save
-        redirect_to(:root, notice: 'User was successfully created')
+        redirect_to(:root, alert: 'User was successfully created')
     end
   end
 
@@ -55,9 +55,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to :root, alert: 'User was successfully updated.' }
         format.json { head :no_content }
       else
+        @tutorials = Tutorial.where(:user_id => @user.id)
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     if checkCredentials
-      redirect_to(:users, notice: 'Access denied !')
+      redirect_to(:users, alert: 'Access denied !')
     else
       @user.destroy
       respond_to do |format|
