@@ -17,7 +17,7 @@
     	}
     });
 	</script>
-	<%= mathjax_tag :config=>'Accessible-full.js' %>
+	<%= mathjax_tag :config => 'Accessible-full.js' %>
 </head>
 <body data-no-turbolink>
 	<header>
@@ -41,6 +41,7 @@
 					<% else %>
 						<li><%= link_to "Login", :login %></li>
 					<% end %>
+					<li><%= link_to "About", :about %></li>
 				</ul>
 			</nav>
 		</div>
@@ -89,8 +90,6 @@
 		<div id="done-walkthrough" style="display:none;">
 			<p class="tooltipTitle">Woooo !</p>
 	        <p>Worked all along!</p>
-	        <br>
-	        <p>Walkthrough generated with <a target="_blank" href="http://jquerypagewalkthrough.github.io/">Jquery Page Walkthrough</a></p>
 	        <br>
 	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
 	        <a href="javascript:;" class="restart-step" style="float:center;">Restart Walkthrough</a>
