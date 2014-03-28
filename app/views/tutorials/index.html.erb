@@ -1,11 +1,18 @@
 <div class="top-right">
 	<%= link_to image_tag('/images/icons/add.png') + 'New tutorial', new_tutorial_path, { :class => "actionlink" } %>
 </div>
+
 <h1>Tutorials list</h1>
+
+<%= render :partial => 'search' %>
+
 <% @tutorials.each do |tutorial| %>
 	<div class="highlight">
 		<div class="image"><%= image_tag(root_url + tutorial.image) %></div>
 		<%= link_to tutorial.title, tutorial_path(tutorial) %>
 	</div>
 <% end %>
-<%= will_paginate @tutorials %>
+
+<% if not params[:search] %>
+	<%= will_paginate @tutorials %>
+<% end %>

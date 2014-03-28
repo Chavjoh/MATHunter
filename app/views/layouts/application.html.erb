@@ -9,7 +9,15 @@
 	<link type="text/css" rel="stylesheet" href="<%= root_url %>plugins/walkthrough/css/jquery.pagewalkthrough.css"/>
 	<link type="text/css" rel="stylesheet" href="<%= root_url %>styles/design.css"/>
 	<script type="text/javascript" src="<%= root_url %>plugins/walkthrough/jquery.pagewalkthrough-1.1.0.js"></script>
-	<script type="text/javascript" src="<%= root_url %>javascripts/application.walkthrough.js"></script>
+	<script type="text/javascript" src="<%= root_url %>javascripts/application.walkthrough.js"></script>	
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    	tex2jax: {
+    		inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+    	}
+    });
+	</script>
+	<%= mathjax_tag :config=>'Accessible-full.js' %>
 </head>
 <body data-no-turbolink>
 	<header>
