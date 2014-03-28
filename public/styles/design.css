@@ -202,6 +202,10 @@ table td.chapter {
 	margin-bottom: 10px;
 }
 
+#chapter_form .title input {
+	width: 988px;
+}
+
 #tutorial_form {
 	width: 100%;
 }

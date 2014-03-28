@@ -1,5 +1,7 @@
+<div id="chapter_form">
+
 <%= form_for [@tutorial, @chapter] do |f| %>
-	<div class="field">
+	<div class="field title">
 		<%= f.label :title %><br />
 		<%= f.text_field :title %>
 	</div>
@@ -11,3 +13,5 @@
 		<%= f.submit %>
 	</div>
 <% end %>
+
+</div>
