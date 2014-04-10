@@ -16,6 +16,9 @@ MATHunter::Application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
   
+  get 'voteGood/:id' => 'tutorials#voteGood', :as => :voteGood
+  get 'voteBad/:id' => 'tutorials#voteBad', :as => :voteBad
+  
   mathjax 'mathjax'
 
   # The priority is based upon order of creation: first created -> highest priority.

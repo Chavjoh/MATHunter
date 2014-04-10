@@ -12,6 +12,11 @@
 <p>
 	<%= @tutorial.description %>
 </p>
+<p>
+	<%= link_to '+1', voteGood_path(@tutorial) %> | 
+	<%= link_to '-1', voteBad_path(@tutorial) %> 
+	(Current Score: <%= @tutorial.score %>)
+</p>
 <table cellspacing="10">
 	<% @chapters.each_with_index do |chapter, index| %>
 	<tr>

@@ -15,6 +15,22 @@ class TutorialsController < ApplicationController
     redirect_to tutorial_chapters_path(@tutorial)
   end
   
+  def voteGood
+    @tutorial = Tutorial.find(params[:id])
+    score = @tutorial.score
+    score += 1
+    Tutorial.update(params[:id], {"score" => score})
+    redirect_to tutorial_chapters_path(@tutorial)
+  end
+  
+  def voteBad
+    @tutorial = Tutorial.find(params[:id])
+    score = @tutorial.score
+    score -= 1
+    Tutorial.update(params[:id], {"score" => score})
+    redirect_to tutorial_chapters_path(@tutorial)
+  end
+  
   def highlights
     @tutorials = Tutorial.all
     
