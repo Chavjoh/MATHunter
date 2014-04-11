@@ -11,9 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if checkCredentials
-      redirect_to(:users, alert: 'Access denied !')
-    end
+    redirect_to(:root, alert: 'Access denied !')
   end
 
   # GET /users/new
