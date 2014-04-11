@@ -96,16 +96,34 @@ header {
 header .left_side {
 	float: left;
 	padding: 50px 0px 0px 0px;
+	width: 450px;
 }
 
 header #user_detail {
 	display: block;
+	float: left;
+	margin-top: -169px;
+	position: relative;
+	background-color: #27A0D7;
+	color: black;
+	border-radius: 0px 0px 5px 5px;
+	padding: 5px;
+}
+
+header #user_detail a {
+	color: white;
+	padding-left: 10px;
 }
 
 header #website_name {
 	color: #D6D6D6;
 	font-weight: bold;
 	font-size: 2.5em;
+}
+
+header img {
+	margin-left: -80px;
+	margin-top: -50px;
 }
 
 header nav {
