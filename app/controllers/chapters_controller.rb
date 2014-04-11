@@ -3,6 +3,16 @@ class ChaptersController < ApplicationController
   
   def index
     @tutorial = get_related_tutorial
+    
+    case @tutorial.difficulty
+    when 1
+      @stringDifficulty = "Easy"
+    when 2
+      @stringDifficulty = "Medium"
+    else
+      @stringDifficulty = "Hard"
+    end
+    
     @chapters = @tutorial.chapters.paginate(:page => params[:page], :per_page => 10)
   end
   

@@ -220,16 +220,15 @@
 
 #jpwClose a{
     text-align: center;
-    font-family: 'GochiHand';
+    font-family: 'Open Sans', sans-serif;
     color:#fff;
     font-size: 16px;
     display: block;
-    font-weight: lighter;
+    font-weight: bold;
 }
 
 #jpwClose a:hover{
     color: #7EFF00;
-
 }
 
 #jpwClose a span{
@@ -249,29 +248,27 @@
 
 /*** tooltip content ****/
 @font-face {
-    font-family: 'GochiHand';
-    src: url('font/GochiHand-Regular.eot');
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'GochiHand';
-    src: url('font/GochiHand-Regular.ttf') format('truetype');
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 
 #jpWalkthrough #jpwTooltip #tooltipInner{
-    font-family: 'GochiHand';
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
     text-align: center;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 #jpWalkthrough #jpwTooltip #tooltipInner a{
-    font-size: 16px;
+    font-size: 24px;
 }
 
 #jpWalkthrough #jpwTooltip #tooltipInner .tooltipTitle{
-    font-size: 40px;
+    font-size: 48px;
 }

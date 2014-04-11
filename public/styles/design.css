@@ -237,6 +237,12 @@ table td.chapter {
 	overflow: hidden;
 }
 
+#logo_hearc {
+	float: right;
+	
+	margin-top: 20px;
+}
+
 .tab {
 	float: left;
 	width: 126px;
