@@ -1,6 +1,13 @@
 <h1>Login</h1>
 
-<%= render 'form' %>
+<table class="user_edit">
+	<tr>
+		<td 
+			<%= render 'form' %>
+		</td>
+		<td> 
+			<%= link_to 'Sign up for free', new_user_path, { :class => 'signup' } %>
+		</td>
+	</tr>
+</table>
 
-<!-- <%= link_to 'Back', user_sessions_path %> -->
-<%= link_to 'Sign Up', new_user_path %>

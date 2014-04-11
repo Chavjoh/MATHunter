@@ -86,6 +86,22 @@ img {
 	margin: 0px auto;
 }
 
+.signup,
+.signup:active,
+.signup:visited {
+	color: white;
+	background-color: #27A0D7;
+	border-radius: 10px;
+	padding: 20px 40px;
+	font-size: 3em;
+	text-transform: uppercase;
+    transition: all 0.5s linear;
+}
+
+.signup:hover {
+	box-shadow: 0 0 15px #27A0D7;
+}
+
 .actionlink {
 	float: left;
 	color: #27A0D7;
@@ -205,6 +221,12 @@ div.highlight {
 	background: -ms-linear-gradient(top,  #43aad9 0%,#27a0d7 99%); /* IE10+ */
 	background: linear-gradient(to bottom,  #43aad9 0%,#27a0d7 99%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43aad9', endColorstr='#27a0d7',GradientType=0 ); /* IE6-9 */
+	
+    transition: all 0.5s linear;
+}
+
+div.highlight:hover {
+	box-shadow: 0 0 15px #27A0D7;
 }
 
 div.highlight .image {
