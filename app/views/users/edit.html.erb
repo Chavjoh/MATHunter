@@ -3,10 +3,11 @@
 <table class="user_edit">
 	<tr>
 		<td>
+			<h2>Your account</h2>
 			<%= render 'form' %>
 		</td>
 		<td>
-			<h2>Your tutorial </h2>
+			<h2>Your tutorials</h2>
 			<% if not @tutorials.empty? %>
 			
 				<% @tutorials.each do |tutorial| %>
