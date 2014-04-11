@@ -1,6 +1,6 @@
 <tr>
 	<td class="title">
-		<strong><%= comment.user.email[/[^@]+/].sub('.', ' ').split.map(&:capitalize).join(' ') %></strong>
+		<p><strong><%= comment.user.email[/[^@]+/].sub('.', ' ').split.map(&:capitalize).join(' ') %></strong></p>
 	</td>
 	<td>
 		<em><%= simple_format(comment.content) %></em>

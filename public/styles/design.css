@@ -307,6 +307,10 @@ table.comment_list {
 	width: 100%;
 }
 
+table.comment_list td {
+	vertical-align: top;
+}
+
 table.comment_list td.title {
 	width: 126px;
 } 
