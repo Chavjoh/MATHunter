@@ -23,11 +23,11 @@
 	<header>
 		<div class="website_center">
 			<div class="left_side">
-				<a id="website_name" href="<%= root_url %>">MATHunter</a>
+				<a id="website_name" href="<%= root_url %>"><img src="<%= root_url %>images/logo.png" /></a>
 				<% if current_user %>
 					<span id="user_detail">
 						Connected as <%=current_user.email%>
-						<%= link_to "[Disconnect]", :logout %>
+						<%= link_to "[Log out]", :logout %>
 					</span>
 				<% end %>
 			</div>
@@ -49,10 +49,12 @@
 	
 	<section id="content">
 		<div class="website_center">
-			<div>
-				<p id="notice"><%= flash[:notice] %></p>
-				<p id="alert"><%= flash[:alert] %></p>
-			</div>
+			<% if flash[:notice] %>
+			<p id="notice"><%= flash[:notice] %></p>
+			<% end %>
+			<% if flash[:alert] %>
+			<p id="notice"><%= flash[:alert] %></p>
+			<% end %>
 				
 			<%= yield %>
 		</div>
