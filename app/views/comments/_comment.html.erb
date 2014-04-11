@@ -1,4 +1,8 @@
-<p>
-	<strong><%= comment.user.email %> says</strong>
-	<em><%= comment.content %></em>
-</p>
+<tr>
+	<td class="title">
+		<strong><%= comment.user.email[/[^@]+/].sub('.', ' ').split.map(&:capitalize).join(' ') %></strong>
+	</td>
+	<td>
+		<em><%= simple_format(comment.content) %></em>
+	</td>
+</tr>

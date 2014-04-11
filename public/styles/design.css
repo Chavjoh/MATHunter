@@ -303,6 +303,14 @@ table td.chapter {
 	border-color: #43aad9;
 }
 
+table.comment_list {
+	width: 100%;
+}
+
+table.comment_list td.title {
+	width: 126px;
+} 
+
 table.comment_form {
 	width: 100%;
 }
