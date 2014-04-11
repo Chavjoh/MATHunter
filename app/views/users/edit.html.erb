@@ -1,21 +1,27 @@
 <h1>Editing User</h1>
 
-<%= render 'form' %>
+<table class="user_edit">
+	<tr>
+		<td>
+			<%= render 'form' %>
+		</td>
+		<td>
+			<strong>Your tutorial list : </strong>
+			<% if not @tutorials.empty? %>
+			
+				<% @tutorials.each do |tutorial| %>
+					<div><%= link_to tutorial.title, tutorial_path(tutorial) %></div>
+				<% end %>
+			
+			<% else %>
+			<p>
+				Presently you don't have any tutorial.  <br />
+				<%= link_to 'Create your first !', new_tutorial_path %>
+			</p>
+			<% end %>
+		</td>
+	</tr>
+</table>
 
 <!-- Listening of current user logged tutorials -->
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @tutorials.each do |tutorial| %>
-		<tr>
-			<td><%= tutorial.title %></td>
-			<td><%= tutorial.description %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+
