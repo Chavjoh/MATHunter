@@ -17,17 +17,23 @@ class TutorialsController < ApplicationController
   
   def voteGood
     @tutorial = Tutorial.find(params[:id])
-    score = @tutorial.score
-    score += 1
-    Tutorial.update(params[:id], {"score" => score})
+    if !session[:voted]
+      score = @tutorial.score
+      score += 1
+      Tutorial.update(params[:id], {"score" => score})
+      session[:voted] = true
+    end
     redirect_to tutorial_chapters_path(@tutorial)
   end
   
   def voteBad
     @tutorial = Tutorial.find(params[:id])
-    score = @tutorial.score
-    score -= 1
-    Tutorial.update(params[:id], {"score" => score})
+      if !session[:voted]
+      score = @tutorial.score
+      score -= 1
+      Tutorial.update(params[:id], {"score" => score})
+      session[:voted] = true
+    end
     redirect_to tutorial_chapters_path(@tutorial)
   end
   
