@@ -3,6 +3,7 @@
 <%= render 'form' %>
 
 <!-- Listening of current user logged tutorials -->
+<h3>My Tutorials</h3>
 <table>
 	<thead>
 		<tr>
@@ -13,7 +14,7 @@
 	<tbody>
 		<% @tutorials.each do |tutorial| %>
 		<tr>
-			<td><%= tutorial.title %></td>
+			<td><%= link_to tutorial.title, tutorial_chapters_path(tutorial) %></td>
 			<td><%= tutorial.description %></td>
 		</tr>
 		<% end %>
