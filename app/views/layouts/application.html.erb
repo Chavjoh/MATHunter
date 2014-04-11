@@ -49,10 +49,12 @@
 	
 	<section id="content">
 		<div class="website_center">
-			<div>
-				<p id="notice"><%= flash[:notice] %></p>
-				<p id="alert"><%= flash[:alert] %></p>
-			</div>
+			<% if flash[:notice] %>
+			<p id="notice"><%= flash[:notice] %></p>
+			<% end %>
+			<% if flash[:alert] %>
+			<p id="notice"><%= flash[:alert] %></p>
+			<% end %>
 				
 			<%= yield %>
 		</div>
