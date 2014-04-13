@@ -1,6 +1,14 @@
 <% @tutorials.each do |tutorial| %>
 	<div class="highlight">
-		<div class="image"><%= image_tag(root_url + tutorial.image) %></div>
+		
+		<div class="image">
+			<% if not tutorial.image.blank? %>
+			<%= image_tag(root_url + tutorial.image) %>
+			<% else %>
+			&nbsp;
+			<% end %>
+		</div>
+		
 		<%= link_to tutorial.title, tutorial_path(tutorial) %>
 	</div>
 <% end %>
