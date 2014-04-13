@@ -38,7 +38,7 @@ class TutorialsController < ApplicationController
   end
   
   def highlights
-    @tutorials = Tutorial.all
+    @tutorials = Tutorial.find(:all, :limit => 6, :order => 'score desc')
     
     render 'highlights'
   end
