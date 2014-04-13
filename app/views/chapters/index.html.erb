@@ -5,7 +5,9 @@
 	<%= link_to image_tag('/images/icons/delete.png') + 'Delete', tutorial_path(@tutorial), { :method => 'delete', :class => "actionlink" } %>
 </div>
 <h1><%= @tutorial.title %></h1>
+<% if not @tutorial.image.blank? %>
 <img class="tutorial_image" src="<%= root_url + @tutorial.image %>" alt="<%= @tutorial.title %>" /> 
+<% end %>
 <p>
 	Difficulty : <%= @stringDifficulty %>
 </p>
