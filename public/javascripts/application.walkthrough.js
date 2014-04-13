@@ -11,7 +11,7 @@ $(document).ready(function() {
 					type: 'modal',
 					offsetHorizontal: 0,
 					offsetVertical: 0,
-					width: '500'
+					width: '600'
 				}        
 			},
 			{
@@ -23,20 +23,32 @@ $(document).ready(function() {
 					type: 'modal',
 					offsetHorizontal: 0,
 					offsetVertical: 0,
-					width: '500'
+					width: '600'
 				}     
 			},
 			{
-				wrapper: '#JESUISUNTEST',
+				wrapper: '#navigation_menu',
+				margin: '0',
+				popup:
+				{
+					content: '#type-tooltip-bottom',
+					type: 'tooltip',
+					position: 'bottom',
+					offsetHorizontal: 0,
+					offsetVertical: 0,
+					width: '600'
+				}                
+			},
+			{
+				wrapper: '',
 				margin: '0',
 				popup:
 				{
 					content: '#type-tooltip-top',
-					type: 'tooltip',
-					position: 'top',
+					type: 'modal',
 					offsetHorizontal: 0,
 					offsetVertical: 0,
-					width: '500'
+					width: '600'
 				}                
 			},
 			{
@@ -49,7 +61,7 @@ $(document).ready(function() {
 					position: '',
 					offsetHorizontal: 0,
 					offsetVertical: 0,
-					width: '500'
+					width: '600'
 				}             
 			},
 		],

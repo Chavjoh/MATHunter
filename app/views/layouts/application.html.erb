@@ -32,7 +32,7 @@
 				<% end %>
 			</div>
 			
-			<nav>
+			<nav id="navigation_menu">
 				<ul>
 					<li><a href="<%= root_url %>">Home</a></li>
 					<li><%= link_to "Tutorials", tutorials_path %></li>
@@ -61,7 +61,7 @@
 	</section>
 	
 	<footer>
-		<div class="website_center" id="JESUISUNTEST">
+		<div class="website_center">
 			<a href="http://www.github.com/Chavjoh/MATHunter"><img src="<%= root_url %>images/github.png" alt="Github" /></a>
 			<span>Ruby on rails project</span>
 			Chavaillaz Johan, Jupille Dany, Rossier Matthieu
@@ -70,32 +70,40 @@
 	
 	<div id="walkthrough">
 		<div id="type-modal" style="display:none;">
-			<p class="tooltipTitle">It works!</p>
-	        <p>F* finally!</p>
+			<p class="tooltipTitle">Welcome to MATHunter!</p>
+	        <p>It looks like it's your first time here!</p>
+	        <p>Let me guide you a few seconds.</p>
 	        <br>
-	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+	        <a href="javascript:;" class="close-step" style="float:left;">No thanks.</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Yes, please!</a>
 		</div>
 		<div id="type-tooltip" style="display:none;">
-			<p class="tooltipTitle">It still f* works!</p>
-	        <p>I'm so proud of myself.</p>
+			<p class="tooltipTitle">Welcome</p>
+	        <p><strong>MATHunter</strong> is a community website where everyone can teach or learn math through multiple tutorials.</p>
+	        <p>Each tutorial is evaluated by users to only get the best ones.</p>
 	        <br>
-	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
-	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Previous step</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next step</a>
+		</div>
+		<div id="type-tooltip-bottom" style="display:none;">
+			<p class="tooltipTitle">Menu</p>
+	        <p>Use this menu to navigate through the site.</p>
+	        <br>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Previous step</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next step</a>
 		</div>
 		<div id="type-tooltip-top" style="display:none;">
-			<p class="tooltipTitle">Arrow!</p>
-	        <p>So majestic...</p>
+			<p class="tooltipTitle">MATHunter is opensource</p>
+	        <p>Check out the project on <a target="_blank" href="http://www.github.com/Chavjoh/MATHunter">Github</a>!</p>
 	        <br>
-	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
-	        <a href="javascript:;" class="next-step" style="float:right;">Next Step</a>
+	        <a href="javascript:;" class="prev-step" style="float:left;">Previous step</a>
+	        <a href="javascript:;" class="next-step" style="float:right;">Next step</a>
 		</div>
 		<div id="done-walkthrough" style="display:none;">
-			<p class="tooltipTitle">Woooo !</p>
-	        <p>Worked all along!</p>
+			<p class="tooltipTitle">Already finished!</p>
 	        <br>
-	        <a href="javascript:;" class="prev-step" style="float:left;">Prev Step</a>
-	        <a href="javascript:;" class="restart-step" style="float:center;">Restart Walkthrough</a>
-	        <a href="javascript:;" class="close-step" style="float:right;">Close Walkthrough</a>
+	        <a href="javascript:;" class="restart-step" style="float:left;">Restart</a>
+	        <a href="javascript:;" class="close-step" style="float:right;">Close</a>
 		</div>
 	</div>
 	
